@@ -28,6 +28,7 @@ def get_args():
                         help="margin around detected face for age-gender estimation")
     parser.add_argument("--image_dir", type=str, default=None,
                         help="target image directory; if set, images in image_dir are used instead of webcam")
+                      
     args = parser.parse_args()
     return args
 
@@ -115,7 +116,7 @@ def main():
     detect_e=tf.Graph()
     with detect_e.as_default():
         e_graph_def=tf.GraphDef()
-        with tf.gfile.GFile('test.pb','rb') as f:
+        with tf.gfile.GFile(weight_file,'rb') as f:
             serialized_graph = f.read()
             e_graph_def.ParseFromString(serialized_graph)
             tf.import_graph_def(e_graph_def,name='')
