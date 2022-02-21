@@ -40,3 +40,14 @@ conda env create -f environment.yml --name env_name
 
 4.將keras hdf5 model to tensorflow pb model
     python keras_to_tensorflow.py –input_model_file XXXX.hdf5 –output_model_file XXXX.pb 
+    
+
+# error
+yaml 安裝錯誤時 請先將該行mark(#) ，重新create一次在自行安裝失敗套件
+
+dlib 錯誤請去下載
+https://pypi.org/simple/dlib/ tar.gz解壓縮 
+pip install cmake
+python setup.py install
+
+
