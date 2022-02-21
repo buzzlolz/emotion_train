@@ -47,7 +47,9 @@ yaml 安裝錯誤時 請先將該行mark(#) ，重新create一次在自行安裝
 
 dlib 錯誤請去下載
 https://pypi.org/simple/dlib/ tar.gz解壓縮 
+
 pip install cmake
+
 python setup.py install
 
 
