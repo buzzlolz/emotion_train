@@ -51,19 +51,19 @@ def video_capture(*args, **kwargs):
 
 
 def yield_images():
-    # capture video
-    with video_capture(0) as cap:
-        cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
-        cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
+    cap = cv2.VideoCapture(0)
+    # cap.set(cv2.CAP_PROP_FRAME_WIDTH, 1080)
+    # cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 720)
 
-        while True:
-            # get video frame
-            ret, img = cap.read()
+    while cap.isOpened():
+        # get video frame
+        ret, img = cap.read()
 
-            if not ret:
-                raise RuntimeError("Failed to capture image")
+        if not ret:
+            raise RuntimeError("Failed to capture image")
 
-            yield img
+        yield img
+
 
 
 def yield_images_from_dir(image_dir):
